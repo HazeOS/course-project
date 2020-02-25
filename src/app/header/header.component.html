@@ -1,0 +1,13 @@
+<mat-toolbar class="header">
+  <span class="header__title">Recipe Book</span>
+  <a href="#" class="margin-left-small header__link">Recipes</a>
+  <a href="#" class="margin-left-small header__link">Shopping list</a>
+  <span class="fill-remaining-space"></span>
+  <button mat-raised-button [matMenuTriggerFor]="menu">Manage
+    <mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+</mat-toolbar>

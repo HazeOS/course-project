@@ -1,0 +1,28 @@
+$highlight: #d3eff9;
+$highlight-text: #0083bd;
+$highlight-text-default: rgba(0, 131, 189, 0.51);
+$highlight-transparent: rgba(0, 131, 189, 0.1);
+$green: #009c0d;
+$warning: #FF3321;
+$red: #c40d00;
+$brown: #B7A99A;
+$blue: #004B87;
+$dark-brown: #796E65;
+$gray: #bdbdbd;
+$black: #27251F;
+$non-active: #b3b3b3;
+
+.mat-green {
+  background-color: $green;
+  color: white;
+}
+
+.mat-red{
+  background-color: $red;
+  color: white;
+}
+
+.mat-blue{
+  background-color: $blue;
+  color: white;
+}

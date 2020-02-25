@@ -1,0 +1,17 @@
+@import "src/variables";
+
+.shopping-edit{
+
+  &__form{
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+  }
+
+  &__buttons{
+  }
+
+  &__buttons > button:not(:first-child){
+    margin-left: 0.5rem;
+  }
+}

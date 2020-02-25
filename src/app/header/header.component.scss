@@ -1,0 +1,24 @@
+@import "src/variables";
+.header{
+  &__title{
+    color: $highlight-text;
+  }
+
+  &__link{
+    text-decoration: none;
+    color: $gray;
+  }
+  &__link:hover{
+    color:$highlight-text-default;
+  }
+}
+
+.fill-remaining-space{
+  flex: 1 1 auto;
+}
+
+.margin-left-small{
+  margin-left: 1rem;
+}
+
+

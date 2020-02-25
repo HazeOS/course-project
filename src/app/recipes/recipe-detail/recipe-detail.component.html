@@ -1,0 +1,28 @@
+<div class="recipe-detail">
+  <div class="recipe-detail__picture">
+    <img alt="" src="">
+  </div>
+
+  <div class="recipe-detail__header">
+    <h2>Recipe Name</h2>
+  </div>
+
+  <div class="recipe-detail__actions">
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">Manage Recipe
+      <mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>To Shopping List</button>
+      <button mat-menu-item>Edit Recipe</button>
+      <button mat-menu-item>Delete Recipe</button>
+    </mat-menu>
+  </div>
+
+  <div class="recipe-detail__description">
+    <p>Some description text</p>
+  </div>
+
+  <div class="recipe-detail__ingredients">
+    <p>Ingredients List</p>
+  </div>
+</div>

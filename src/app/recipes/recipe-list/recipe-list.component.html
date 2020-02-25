@@ -1,0 +1,20 @@
+<div class="margin-bottom-small">
+  <button mat-stroked-button [color]="'green'">
+    <mat-icon aria-hidden="false">library_add</mat-icon> Add New Recipe
+  </button>
+</div>
+
+<div class="">
+  <mat-card
+    class="recipe-card margin-bottom-small"
+    *ngFor="let recipe of recipes">
+    <div>
+      <h4>{{recipe.name}}</h4>
+      <p>{{recipe.desc}}</p>
+    </div>
+    <div>
+      <img class="recipe-card__image" [src]="recipe.imagePath" alt="{{recipe.name}}">
+    </div>
+  </mat-card>
+  <app-recipe-item></app-recipe-item>
+</div>

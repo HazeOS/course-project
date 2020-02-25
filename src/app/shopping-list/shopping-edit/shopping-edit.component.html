@@ -1,0 +1,20 @@
+<div class="shopping-edit">
+  <h3>Add ingredients</h3>
+  <form class="shopping-edit__form">
+    <mat-form-field class="shopping-edit__input">
+      <mat-label>Ingredient name</mat-label>
+      <input type="text" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="shopping-edit__input">
+      <mat-label>Amount</mat-label>
+      <input type="number" matInput>
+    </mat-form-field>
+
+    <div class="shopping-edit__buttons">
+      <button mat-raised-button [color]="'green'">Add</button>
+      <button mat-raised-button [color]="'red'">Delete</button>
+      <button mat-raised-button [color]="'blue'">Clear</button>
+    </div>
+  </form>
+</div>
