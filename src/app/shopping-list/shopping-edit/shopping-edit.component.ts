@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {ShoppingListService} from '../shopping-list.service';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(private shoppingListService: ShoppingListService) { }
+
+  @ViewChild('nameInput', { static: false }) ingName: ElementRef;
+  @ViewChild('amountInput', { static: false }) ingAmount: ElementRef;
 
   ngOnInit(): void {
+  }
+
+  onAddIngredient(e) {
+    e.preventDefault();
+    this.shoppingListService.addIngredient({
+      name: this.ingName.nativeElement.value,
+      amount: this.ingAmount.nativeElement.value
+    });
   }
 
 }

@@ -5,7 +5,10 @@
   </div>
 
   <div class="recipe-block__detail">
-    <app-recipe-detail></app-recipe-detail>
+    <app-recipe-detail *ngIf="selectedRecipe; else infoText" [recipeDetail]="selectedRecipe"></app-recipe-detail>
+    <ng-template #infoText>
+      <p>Select a recipe</p>
+    </ng-template>
   </div>
 
 </div>

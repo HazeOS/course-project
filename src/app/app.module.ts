@@ -18,6 +18,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {ShoppingListService} from './shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

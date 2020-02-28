@@ -4,17 +4,10 @@
   </button>
 </div>
 
-<div class="">
-  <mat-card
-    class="recipe-card margin-bottom-small"
-    *ngFor="let recipe of recipes">
-    <div>
-      <h4>{{recipe.name}}</h4>
-      <p>{{recipe.desc}}</p>
-    </div>
-    <div>
-      <img class="recipe-card__image" [src]="recipe.imagePath" alt="{{recipe.name}}">
-    </div>
-  </mat-card>
-  <app-recipe-item></app-recipe-item>
+<div class="recipe-list">
+  <app-recipe-item
+    [recipeItem]="recipe"
+    *ngFor="let recipe of recipes"
+    (click)="onRecipeClick(recipe)"
+  ></app-recipe-item>
 </div>

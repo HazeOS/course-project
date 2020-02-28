@@ -1,0 +1,18 @@
+@import "src/variables";
+
+.margin-bottom-small{
+  margin-bottom: 1rem;
+}
+.recipe-card{
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &:hover{
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  }
+
+  &__image{
+    width: 6.5rem;
+  }
+}

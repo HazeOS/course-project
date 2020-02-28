@@ -3,16 +3,16 @@
   <form class="shopping-edit__form">
     <mat-form-field class="shopping-edit__input">
       <mat-label>Ingredient name</mat-label>
-      <input type="text" matInput>
+      <input type="text" matInput #nameInput>
     </mat-form-field>
 
     <mat-form-field class="shopping-edit__input">
       <mat-label>Amount</mat-label>
-      <input type="number" matInput>
+      <input type="number" matInput #amountInput>
     </mat-form-field>
 
     <div class="shopping-edit__buttons">
-      <button mat-raised-button [color]="'green'">Add</button>
+      <button (click)="onAddIngredient($event)" mat-raised-button [color]="'green'">Add</button>
       <button mat-raised-button [color]="'red'">Delete</button>
       <button mat-raised-button [color]="'blue'">Clear</button>
     </div>

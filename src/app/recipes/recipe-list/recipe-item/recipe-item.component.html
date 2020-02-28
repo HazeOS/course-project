@@ -1,1 +1,9 @@
-<p>recipe-item works!</p>
+<mat-card class="recipe-card margin-bottom-small">
+  <div>
+    <h4>{{recipeItem.name}}</h4>
+    <p>{{recipeItem.desc}}</p>
+  </div>
+  <div>
+    <img class="recipe-card__image" [src]="recipeItem.imagePath" alt="{{recipeItem.name}}">
+  </div>
+</mat-card>
