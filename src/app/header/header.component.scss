@@ -7,6 +7,10 @@
   &__link{
     text-decoration: none;
     color: $gray;
+
+    &__active{
+      color:$highlight-text-default;
+    }
   }
   &__link:hover{
     color:$highlight-text-default;

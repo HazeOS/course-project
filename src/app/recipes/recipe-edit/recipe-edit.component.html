@@ -1,0 +1,68 @@
+<div class="recipe-edit">
+  <h4>{{modeText}}</h4>
+  <form *ngIf="editMode" [formGroup]="formEdit" class="recipe-edit__form"> <!--Редактирование-->
+    <mat-form-field class="recipe-edit__input">
+      <mat-label>Recipe name</mat-label>
+      <input formControlName="name" type="text" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="recipe-edit__input">
+      <mat-label>Recipe description</mat-label>
+      <input formControlName="description" type="text" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="recipe-edit__input">
+      <mat-label>Recipe ingredients</mat-label>
+      <input formControlName="ingredients" type="text" matInput>
+    </mat-form-field>
+
+    <div class="recipe-edit__buttons">
+      <button mat-raised-button [color]="'blue'">Save</button>
+      <button mat-raised-button [color]="'red'">Exit</button>
+    </div>
+  </form>
+
+  <form *ngIf="!editMode" [formGroup]="formNew" class="recipe-edit__form"> <!--Создание нового рецепта-->
+    <mat-form-field class="recipe-edit__input">
+      <mat-label>Recipe name</mat-label>
+      <input formControlName="name" type="text" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="recipe-edit__input">
+      <mat-label>Recipe description</mat-label>
+      <input formControlName="description" type="text" matInput>
+    </mat-form-field>
+
+    <div class="recipe-edit__ing-flex">
+      <form [formGroup]="formIngredient" (ngSubmit)="addIngredientToList(formIngredient.value)">
+        <mat-form-field class="recipe-edit__input">
+          <mat-label>Ingredient</mat-label>
+          <input formControlName="name" type="text" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="recipe-edit__input">
+          <mat-label>Ingredient amount</mat-label>
+          <input formControlName="amount" type="number" matInput>
+        </mat-form-field>
+
+        <button type="submit" title="Add ingredient to list" mat-stroked-button>
+          <mat-icon aria-hidden="false">add</mat-icon>
+        </button>
+
+        <mat-list>
+          <mat-list-item *ngFor="let ingredient of ingredients">{{ingredient.name}} ({{ingredient.amount}})</mat-list-item> <!--Вывод добавленных ингридиентов в цикле-->
+        </mat-list>
+      </form>
+    </div>
+
+    <mat-form-field class="recipe-edit__input">
+      <mat-label>Image path</mat-label>
+      <input formControlName="imagePath" type="text" matInput>
+    </mat-form-field>
+
+    <div class="recipe-edit__buttons">
+      <button [disabled]="!formNew.valid || !formIngredient.valid" (click)="addRecipe()" mat-raised-button [color]="'blue'">Save</button>
+      <button mat-raised-button [color]="'red'">Exit</button>
+    </div>
+  </form>
+</div>

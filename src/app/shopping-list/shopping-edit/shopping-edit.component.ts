@@ -1,5 +1,7 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ShoppingListService} from '../shopping-list.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {CustomValidators} from '../../shared/classes/custom-validators';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -8,19 +10,30 @@ import {ShoppingListService} from '../shopping-list.service';
 })
 export class ShoppingEditComponent implements OnInit {
 
-  constructor(private shoppingListService: ShoppingListService) { }
+  constructor(private shoppingListService: ShoppingListService, private formBuilder: FormBuilder) { }
 
-  @ViewChild('nameInput', { static: false }) ingName: ElementRef;
-  @ViewChild('amountInput', { static: false }) ingAmount: ElementRef;
+  public form: FormGroup;
+  customValidators = new CustomValidators();
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      name: [null,
+        [
+          this.customValidators.isFirstCharUpperCase,
+          Validators.pattern(/^[A-ZА-Яa-zа-я]*$/),
+          Validators.required
+        ]
+      ],
+      amount: [null, Validators.required]
+    });
   }
 
   onAddIngredient(e) {
+    console.log(this.form);
     e.preventDefault();
     this.shoppingListService.addIngredient({
-      name: this.ingName.nativeElement.value,
-      amount: this.ingAmount.nativeElement.value
+      name: this.form.controls.name.value,
+      amount: this.form.controls.amount.value
     });
   }
 

@@ -1,0 +1,29 @@
+@import "../../../variables";
+
+.recipe-edit{
+  &__form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__buttons > button:not(:first-child){
+    margin-left: 0.5rem;
+  }
+
+  &__ing-flex{
+    display: flex;
+    align-items: center;
+  }
+
+  &__ing-flex > mat-icon{
+    cursor: pointer;
+  }
+
+  &__ing-flex > form > mat-form-field:nth-child(2){
+    margin-left: 1rem;
+  }
+
+  &__ing-flex > form > button{
+    margin-left: 1rem;
+  }
+}

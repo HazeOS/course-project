@@ -1,13 +1,13 @@
 <div class="margin-bottom-small">
-  <button mat-stroked-button [color]="'green'">
+  <button (click)="newRecipe()" mat-stroked-button [color]="'green'">
     <mat-icon aria-hidden="false">library_add</mat-icon> Add New Recipe
   </button>
 </div>
 
-<div class="recipe-list">
+<div class="recipe-list"> <!--Выводим все рецепты в цикле-->
   <app-recipe-item
     [recipeItem]="recipe"
-    *ngFor="let recipe of recipes"
-    (click)="onRecipeClick(recipe)"
+    *ngFor="let recipe of recipes; let i = index"
+    [id]="i"
   ></app-recipe-item>
 </div>

@@ -12,8 +12,8 @@
       <mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>To Shopping List</button>
-      <button mat-menu-item>Edit Recipe</button>
+      <button mat-menu-item (click)="addToShoppingList()">To Shopping List</button>
+      <button mat-menu-item (click)="editRecipe()">Edit Recipe</button>
       <button mat-menu-item>Delete Recipe</button>
     </mat-menu>
   </div>
@@ -23,6 +23,8 @@
   </div>
 
   <div class="recipe-detail__ingredients">
-    <p>Ingredients List</p>
+    <mat-list>
+      <mat-list-item *ngFor="let ingredient of recipeDetail.ingredients"> {{ingredient.name}} ({{ingredient.amount}}) </mat-list-item>
+    </mat-list>
   </div>
 </div>

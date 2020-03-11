@@ -11,6 +11,7 @@ export class RecipeItemComponent implements OnInit {
   constructor() { }
 
   @Input() recipeItem: Recipe;
+  @Input() id: number;
 
   ngOnInit(): void {
   }

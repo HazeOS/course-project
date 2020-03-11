@@ -1,4 +1,4 @@
-<mat-card class="recipe-card margin-bottom-small">
+<mat-card [routerLink]="[id]" [routerLinkActive]="'recipe-card__active'" class="recipe-card margin-bottom-small"> <!--Карточка рецепта-->
   <div>
     <h4>{{recipeItem.name}}</h4>
     <p>{{recipeItem.desc}}</p>

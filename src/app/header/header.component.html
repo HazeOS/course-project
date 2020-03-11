@@ -1,7 +1,7 @@
 <mat-toolbar class="header">
-  <span class="header__title">Recipe Book</span>
-  <a (click)="onSelect('recipe')" href="#" class="margin-left-small header__link">Recipes</a>
-  <a (click)="onSelect('shopping-list')" href="#" class="margin-left-small header__link">Shopping list</a>
+  <span [routerLink]="['/']" class="header__title">Recipe Book</span> <!--Ссылка на домашнюю страницу-->
+  <a routerLinkActive="header__link__active" routerLink="/recipes" class="margin-left-small header__link">Recipes</a> <!--1ый вариант указания ссылки в routerLink-->
+  <a routerLinkActive="header__link__active" [routerLink]="['/shopping-list']" class="margin-left-small header__link">Shopping list</a><!--1ой вариант указания ссылки в routerLink-->
   <span class="fill-remaining-space"></span>
   <button mat-raised-button [matMenuTriggerFor]="menu">Manage
     <mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
