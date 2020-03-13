@@ -2,6 +2,7 @@
 .header{
   &__title{
     color: $highlight-text;
+    cursor: pointer;
   }
 
   &__link{

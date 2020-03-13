@@ -14,7 +14,7 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="addToShoppingList()">To Shopping List</button>
       <button mat-menu-item (click)="editRecipe()">Edit Recipe</button>
-      <button mat-menu-item>Delete Recipe</button>
+      <button mat-menu-item (click)="deleteRecipe()">Delete Recipe</button>
     </mat-menu>
   </div>
 
@@ -23,6 +23,7 @@
   </div>
 
   <div class="recipe-detail__ingredients">
+    <h4>Ingredients</h4>
     <mat-list>
       <mat-list-item *ngFor="let ingredient of recipeDetail.ingredients"> {{ingredient.name}} ({{ingredient.amount}}) </mat-list-item>
     </mat-list>

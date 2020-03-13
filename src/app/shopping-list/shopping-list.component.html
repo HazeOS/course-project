@@ -1,8 +1,11 @@
-<div class="shop-list">
+<div class="shopping-list">
   <app-shopping-edit></app-shopping-edit>
   <hr>
   <h4>Ingredients list</h4>
-  <mat-list>
-    <mat-list-item *ngFor="let ingredient of ingredients">{{ingredient.name}} ({{ingredient.amount}})</mat-list-item>
+  <mat-list class="shopping-list__mat-list">
+    <mat-list-item class="shopping-list__mat-list__item" (click)="editItem(i)" *ngFor="let ingredient of ingredients; let i = index">
+      <span class="shopping-list__mat-list__item__ingredient">{{ingredient.name}} ({{ingredient.amount}})</span>
+      <mat-icon class="shopping-list__mat-list__item__delete-icon" (click)="deleteIngredient(i)" title="Click to delete ingredient" aria-hidden="false">delete</mat-icon>
+    </mat-list-item>
   </mat-list>
 </div>

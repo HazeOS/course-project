@@ -4,7 +4,7 @@
     <mat-form-field class="shopping-edit__input">
       <mat-label>Ingredient name</mat-label>
       <input formControlName="name" type="text" matInput>
-      <mat-error *ngIf="form.controls.name.hasError('isUpper') && form.controls.name.invalid">
+      <mat-error *ngIf="form.controls.name.hasError('isUpper')">
         First symbol needs to be char in upper case
       </mat-error>
     </mat-form-field>
@@ -15,9 +15,9 @@
     </mat-form-field>
 
     <div class="shopping-edit__buttons">
-      <button [disabled]="!form.valid" (click)="onAddIngredient($event)" mat-raised-button [color]="'green'">Add</button>
-      <button mat-raised-button [color]="'red'">Delete</button>
-      <button (click)="form.reset()" mat-raised-button [color]="'blue'">Clear</button>
+      <button [disabled]="!form.valid" (click)="onSubmitIngredient()" mat-raised-button [color]="'green'">{{editMode ? 'Update' : 'Add'}}</button>
+      <button [disabled]="!editMode" (click)="deleteItem()" mat-raised-button [color]="'red'">Delete</button>
+      <button (click)="clearForm()" mat-raised-button [color]="'blue'">Clear</button>
     </div>
   </form>
 </div>

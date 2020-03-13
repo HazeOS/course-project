@@ -37,10 +37,6 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
-  addIngredientsToShoppingList(ingredients: Ingredient[]) { // перекидываение ингредиентов в корзину
-    this.slService.addIngredients(ingredients);
-  }
-
   getRecipe(id: number) { // получение копии определенного рецепта по id
     return this.recipes.slice()[id];
   }
@@ -50,8 +46,26 @@ export class RecipeService {
     this.recipeAdded.next(this.recipes.slice());
   }
 
+  updateRecipe(id: number, newRecipe: Recipe) {
+    this.recipes[id] = newRecipe;
+    this.recipeAdded.next(this.recipes.slice());
+  }
+
+  deleteRecipe(id: number) {
+    this.recipes.splice(id, 1);
+    this.recipeAdded.next(this.recipes.slice());
+  }
+
   addIngredient(ingredient) { // добавление ингредиента с прослушкой события для динамического обновления
     this.ingredients.push(ingredient);
     this.ingredientAdded.next(this.ingredients.slice());
+  }
+
+  addIngredientsToShoppingList(ingredients: Ingredient[]) { // перекидываение ингредиентов в корзину
+    this.slService.addIngredients(ingredients);
+  }
+
+  deleteIngredientFromRecipe(idIngredient: number, idRecipe: number) {
+    this.recipes[idRecipe].ingredients.splice(idIngredient, 1);
   }
 }
