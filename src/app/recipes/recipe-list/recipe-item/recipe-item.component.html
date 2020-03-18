@@ -1,7 +1,7 @@
 <mat-card [routerLink]="[id]" [routerLinkActive]="'recipe-card__active'" class="recipe-card margin-bottom-small"> <!--Карточка рецепта-->
   <div>
     <h4>{{recipeItem.name}}</h4>
-    <p>{{recipeItem.desc}}</p>
+    <p>{{recipeItem.desc | reverse:true}}</p>
   </div>
   <div>
     <img class="recipe-card__image" [src]="recipeItem.imagePath" alt="{{recipeItem.name}}">

@@ -25,6 +25,9 @@ import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.componen
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RecipeService} from './recipes/recipe.service';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import {RecipeService} from './recipes/recipe.service';
     ShoppingListComponent,
     ShoppingEditComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ReversePipe,
+    SortPipe
   ],
     imports: [
         BrowserModule,
@@ -52,9 +57,10 @@ import {RecipeService} from './recipes/recipe.service';
         MatInputModule,
         AppRoutingModule,
         RouterModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
-  providers: [ShoppingListService, RecipeService],
+  providers: [ShoppingListService, RecipeService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

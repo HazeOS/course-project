@@ -31,6 +31,22 @@ export class RecipeService {
     ])
   ];
 
+  obj = {
+    name: 'Schnitzel',
+    imagePath: 'Schnitzel',
+    desc: 'Schnitzel',
+    ingredients: [
+      {
+        name: 'Meat',
+        amount: 1
+      },
+      {
+        name: 'Buns',
+        amount: 2
+      }
+    ]
+  };
+
   private ingredients: Ingredient[] = [];
 
   getRecipes() {
